@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='windows-1252' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <h:body>
+                <h1>Cadastro de Usuarios</h1>
+                <h:form>
+                    <h:panelGrid columns="2" >
+                        <h:outputLabel for="idNome" value="Nome:"/>
+                        <h:inputText id="idNome" value="#{UsuarioMB.usuarioSelecionado.nomeUsuario}"  />
+
+                        <h:outputLabel for="idTelefone" value="Telefone:"/>
+                        <h:inputText id="idTelefone" value="#{UsuarioMB.usuarioSelecionado.telefone}" />
+
+                        <h:outputLabel for="idEmail" value="Email:"/>
+                        <h:inputText id="idEmail" value="#{UsuarioMB.usuarioSelecionado.email}" />
+
+                        <h:outputLabel for="idSexo" value="Sexo:" />
+                        <h:selectOneRadio id="idSexo" value="#{UsuarioMB.usuarioSelecionado.sexo}">
+                            <f:selectItem itemLabel="Masculino" itemValue="1" />
+                            <f:selectItem itemLabel="Feminino" itemValue="2" />
+                        </h:selectOneRadio>
+
+                        <h:outputLabel for="idEndereco" value="Endereco:" />
+                        <h:inputText id="idEndereco" value="#{UsuarioMB.usuarioSelecionado.endereco}" />
+                     
+                        <h:outputLabel for="idLogin" value="Login:"/>
+                        <h:inputText id="idLogin" value="#{UsuarioMB.usuarioSelecionado.login}" />
+
+                        <h:outputLabel for="idSenha" value="Senha"/>
+                        <h:inputSecret id="idSenha" value="#{UsuarioMB.usuarioSelecionado.senha}" />
+
+                        <h:outputLabel for="idAdmin" value="É admin"/>
+                        <h:selectBooleanCheckbox value="#{UsuarioMB.usuarioSelecionado.admin}" />
+
+                        <h:commandButton value="Cadastrar" action="#{UsuarioMB.adicionarUsuario()}"/>
+                    </h:panelGrid>
+                </h:form>
+    </h:body>
+</html>
+
